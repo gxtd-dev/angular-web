@@ -1,0 +1,30 @@
+<section name="messageBoxDlg" [ngClass]="dlgClass">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">{{title}}</h4>
+      <button type="button" class="btn-close close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body clearfix">
+        <div class="float-left">
+            <i [ngClass]="['messagebox-type-icon', icon]"></i>
+        </div>
+        <span *ngIf="isStringContent; else templateContent" 
+               class="messagebox-text">{{content}}</span>
+        <ng-template #templateContent>
+            <ng-container [ngTemplateOutlet]="content"></ng-container>
+        </ng-template>
+                     
+    </div>
+
+    <div class="modal-footer">
+        <button *ngFor="let btn of buttons"
+          class="btn btn-rounded {{btn.twbsclass}}" type="button"
+          [title]="btn.label"
+          (click)="confirm(btn.result)">
+            {{btn.label}}
+        </button>
+    </div>
+</section>
+

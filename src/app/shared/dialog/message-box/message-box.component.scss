@@ -1,0 +1,61 @@
+@import './themes/themes';
+
+.modal-header {
+  background-color: $primary;
+  line-height: 45px;
+  position: relative;
+  border-top-left-radius: inherit !important;
+  border-top-right-radius: inherit !important;
+
+  .modal-title {
+    font-weight: bold;
+    color: $white !important;
+    line-height: 1 !important;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $white;
+  }
+}
+
+.modal-body {
+  padding: 20px !important;
+
+  .messagebox-text {
+    font-weight: normal;
+  }
+
+  .messagebox-type-icon {
+    font-size: 30px;
+    margin: 0 15px 0 0;
+    overflow: hidden;
+  }
+}
+
+.modal-footer {
+  padding: 10px !important;
+
+  .btn {
+    min-width: 90px;
+  }
+}
+
+.modal-footer-noborder {
+  border: 0;
+}
+
+.message-box-info .messagebox-type-icon {
+  color: $info;
+}
+
+.message-box-question .messagebox-type-icon {
+  color: $info;
+}
+
+.message-box-error .messagebox-type-icon,
+.message-box-warning .messagebox-type-icon {
+  color: $danger;
+}

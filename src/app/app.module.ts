@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/inmemory-db/inmemory-db.service';
-import { HttpClientModule } from '@angular/common/http';
+import { AppHttpModule } from './shared/http/http.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     SharedModule,
-    HttpClientModule,
+    AppHttpModule.forRoot(),
     BrowserAnimationsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, { passThruUnknownUrl: true }),
     AppRoutingModule
