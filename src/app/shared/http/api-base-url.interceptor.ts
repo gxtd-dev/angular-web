@@ -25,7 +25,6 @@ export class ApiBaseUrlInterceptor implements HttpInterceptor {
             if (!/\/$/.test(applicationSettings.apiUrl)) {
                 this.baseUrl = applicationSettings.apiUrl + '/';
             }
-            this.baseUrl += 'api/';
         }
     }
 
