@@ -24,7 +24,7 @@ export class AuthorizationInterceptor implements HttpInterceptor {
         if (token) {
             if (!req.headers.has('Authorization')) {
                 req = req.clone({
-                    headers: req.headers.set('Authorization', 'Bearer ' + token),
+                    headers: req.headers.set('Authorization', 'JWT ' + token),
                 });
             }
         }

@@ -1,0 +1,92 @@
+<div class="">
+    <div class="breadcrumb">
+        <h1>Danh sách người dùng</h1>
+    </div>
+
+    <div class="separator-breadcrumb border-top"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input id="search" placeholder="Tìm kiếm" [formControl]="searchControl" class="form-control form-control-rounded" type="text">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card  o-hidden">
+                <ngx-datatable style="height: 650px; box-shadow: none" 
+                    class="material fullscreen" 
+                    [columnMode]="'standard'" 
+                    [headerHeight]="50" 
+                    [footerHeight]="50" 
+                    [rowHeight]="60" 
+                    [scrollbarV]="true" 
+                    [rows]="filteredUsers">
+                    <ngx-datatable-column name="user_ho_ten" [width]="300">
+                        <ng-template ngx-datatable-header-template>
+                            Họ tên
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_ho_ten}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_ngay_sinh" [width]="100">
+                        <ng-template ngx-datatable-header-template>
+                            Ngày sinh
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_ngay_sinh}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_dia_chi_cu_ngu_1">
+                        <ng-template ngx-datatable-header-template>
+                            Địa chỉ 1
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_dia_chi_cu_ngu_1}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_dia_chi_cu_ngu_2">
+                        <ng-template ngx-datatable-header-template>
+                            Địa chỉ 2
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_dia_chi_cu_ngu_2}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_created_time">
+                        <ng-template ngx-datatable-header-template>
+                            Điện thoại
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_so_dien_thoai_1}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_created_time">
+                        <ng-template ngx-datatable-header-template>
+                            Ngày tạo
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_created_time | date}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_status">
+                        <ng-template ngx-datatable-header-template>
+                            Trạng thái
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_status}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="user_giao_xu">
+                        <ng-template ngx-datatable-header-template>
+                            Giáo xứ
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.user_giao_xu}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </div>
+    </div>
+</div>

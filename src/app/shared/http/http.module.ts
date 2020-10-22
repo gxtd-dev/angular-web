@@ -20,11 +20,11 @@ export class AppHttpModule {
                     provide: HTTP_INTERCEPTORS,
                     useClass: ApiBaseUrlInterceptor,
                 },
-                // {
-                //     multi: true,
-                //     provide: HTTP_INTERCEPTORS,
-                //     useClass: AuthorizationInterceptor,
-                // },
+                {
+                    multi: true,
+                    provide: HTTP_INTERCEPTORS,
+                    useClass: AuthorizationInterceptor,
+                },
                 // {
                 //     multi: true,
                 //     provide: HTTP_INTERCEPTORS,
