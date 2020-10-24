@@ -1,5 +1,9 @@
 .modal-dialog{
-    animation-name: zoomIn;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+  animation-name: zoomIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  &.modal-super-lg {
+      width: 100%;
+      max-width: calc(100vw - 300px) !important;
+  }
 }

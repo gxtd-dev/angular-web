@@ -11,6 +11,11 @@
                 <input id="search" placeholder="Tìm kiếm" [formControl]="searchControl" class="form-control form-control-rounded" type="text">
             </div>
         </div>
+        <div class="col-md-8 text-right">
+          <button class="btn btn-outline-primary" (click)="onCreate()">
+            Tạo người dùng mới
+          </button>
+        </div>
         <div class="col-md-12">
             <div class="card  o-hidden">
                 <ngx-datatable style="height: 650px; box-shadow: none" 
@@ -27,6 +32,14 @@
                         </ng-template>
                         <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
                             {{row.user_ho_ten}}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="username" [width]="200">
+                        <ng-template ngx-datatable-header-template>
+                            Username
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            {{row.username}}
                         </ng-template>
                     </ngx-datatable-column>
                     <ngx-datatable-column name="user_ngay_sinh" [width]="100">

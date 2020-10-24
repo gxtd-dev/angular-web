@@ -1,0 +1,123 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title mb-3">
+          {{isNew ? 'Tạo người dùng mới': 'Cập nhật thông tin người dùng'}}
+          <button type="button" class="btn-close close" aria-label="Close button" aria-describedby="modal-title"
+            (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form *ngIf="form" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-md-4 form-group mb-3">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username"
+                placeholder="Nhập username">
+              <div *ngIf="submitted && f['username'].errors" class="error">
+                <span *ngIf="f['username'].errors.required">Vui lòng nhập username</span>
+              </div>
+            </div>
+
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_ho_ten">Họ tên người dùng</label>
+              <input type="text" class="form-control" id="user_ho_ten" formControlName="user_ho_ten"
+                placeholder="Nhập họ tên người dùng">
+              <div *ngIf="submitted && f['user_ho_ten'].errors" class="error">
+                <span *ngIf="f['user_ho_ten'].errors.required">Vui lòng nhập họ tên người dùng</span>
+              </div>
+            </div>
+
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_ten_thanh">Tên thánh</label>
+              <input type="text" class="form-control" id="user_ten_thanh" formControlName="user_ten_thanh"
+                placeholder="Nhập tên thánh">
+            </div>
+
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_cmnd_id">CMND</label>
+              <input type="number" class="form-control" id="user_cmnd_id" formControlName="user_cmnd_id"
+                placeholder="Nhập CMND">
+            </div>
+
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_cmnd_ngay_cap">Ngày cấp</label>
+              <app-input-date formControlName="user_cmnd_ngay_cap">
+              </app-input-date>
+            </div>
+
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_cmnd_noi_cap">Nơi cấp</label>
+              <input type="text" class="form-control" id="user_cmnd_noi_cap" formControlName="user_cmnd_noi_cap"
+                placeholder="Nhập nơi cấp">
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+              <label for="user_dia_chi_cu_ngu_1">Địa chỉ cư ngụ 1</label>
+              <input type="text" class="form-control" id="user_dia_chi_cu_ngu_1" formControlName="user_dia_chi_cu_ngu_1"
+                placeholder="Nhập địa chỉ cư ngụ 1">
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+              <label for="user_dia_chi_cu_ngu_2">Địa chỉ cư ngụ 2</label>
+              <input type="text" class="form-control" id="user_dia_chi_cu_ngu_2" formControlName="user_dia_chi_cu_ngu_2"
+                placeholder="Nhập địa chỉ cư ngụ 2">
+            </div>
+
+            <div class="col-md-12 form-group mb-3">
+              <label for="user_email">Email</label>
+              <input type="text" class="form-control" id="user_email" formControlName="user_email"
+                placeholder="Nhập email">
+            </div>
+
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_giao_ho">Giáo họ</label>
+              <input type="text" class="form-control" id="user_giao_ho" formControlName="user_giao_ho"
+                placeholder="Nhập giáo họ">
+            </div>
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_giao_phan">Giáo phận</label>
+              <input type="text" class="form-control" id="user_giao_phan" formControlName="user_giao_phan"
+                placeholder="Nhập giáo phận">
+            </div>
+            <div class="col-md-4 form-group mb-3">
+              <label for="user_giao_xu">Giáo xứ</label>
+              <input type="text" class="form-control" id="user_giao_xu" formControlName="user_giao_xu"
+                placeholder="Nhập giáo xứ">
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+              <label for="user_ngay_sinh">Ngày sinh</label>
+              <app-input-date formControlName="user_ngay_sinh">
+              </app-input-date>
+            </div>
+            <div class="col-md-6 form-group mb-3">
+              <label for="user_noi_sinh">Nơi sinh</label>
+              <input type="text" class="form-control" id="user_noi_sinh" formControlName="user_noi_sinh"
+                placeholder="Nhập nơi sinh">
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+              <label for="user_so_dien_thoai_1">Số điện thoại 1</label>
+              <input type="number" class="form-control" id="user_so_dien_thoai_1" formControlName="user_so_dien_thoai_1"
+                placeholder="Nhập số điện thoại 1">
+            </div>
+            <div class="col-md-6 form-group mb-3">
+              <label for="user_so_dien_thoai_2">Số điện thoại 2</label>
+              <input type="number" class="form-control" id="user_so_dien_thoai_2" formControlName="user_so_dien_thoai_2"
+                placeholder="Nhập số điện thoại 2">
+            </div>
+
+            <div class="col-md-12 border-top mb-1 mt-1"></div>
+
+            <div class="col-md-12 d-flex align-items-center justify-content-end">
+              <button type="button" class="btn btn-warning btn-rounded m-1" (click)="close()">Hủy</button>
+              <button type="submit" class="btn btn-primary btn-rounded m-1">{{isNew ? 'Tạo': 'Cập nhật'}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

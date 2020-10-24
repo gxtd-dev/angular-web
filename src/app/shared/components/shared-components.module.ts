@@ -9,22 +9,28 @@ import { SearchModule } from './search/search.module';
 import { SharedDirectivesModule } from '../directives/shared-directives.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayoutsModule } from './layouts/layouts.module';
+import { InputDateComponent } from './input-date/input-date.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const components = [
   BtnLoadingComponent,
   FeatherIconComponent,
+  InputDateComponent,
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule,
     LayoutsModule,
     SharedPipesModule,
     SharedDirectivesModule,
     SearchModule,
     PerfectScrollbarModule,
-    NgbModule
+    NgbModule,
+
   ],
   declarations: components,
   exports: components
