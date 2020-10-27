@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from './shared/components/layouts/auth-layout/aut
 import { AuthGaurd } from './shared/services/auth.gaurd';
 import { BlankLayoutComponent } from './shared/components/layouts/blank-layout/blank-layout.component';
 import { AdminLayoutSidebarCompactComponent } from './shared/components/layouts/admin-layout-sidebar-compact/admin-layout-sidebar-compact.component';
+import { AdminLayoutSidebarLargeComponent } from './shared/components/layouts/admin-layout-sidebar-large/admin-layout-sidebar-large.component';
 
 const adminRoutes: Routes = [
     {
@@ -44,7 +45,8 @@ const routes: Routes = [
     },
     {
         path: '',
-        component: AdminLayoutSidebarCompactComponent,
+        // component: AdminLayoutSidebarCompactComponent,
+        component: AdminLayoutSidebarLargeComponent,
         canActivate: [AuthGaurd],
         children: adminRoutes
     },

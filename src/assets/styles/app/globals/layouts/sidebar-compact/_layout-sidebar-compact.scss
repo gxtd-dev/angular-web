@@ -20,11 +20,11 @@
     transition: all 0.24s ease-in-out;
     padding: 0 2rem;
     position: relative;
-    min-height: calc(100vh - #{$topbar-height});
+    min-height: calc(100vh - 10px);
     background: $white;
   }
   .main-content {
-    margin-top: 104px;
+    margin-top: 20px;
   }
   .sidebar-left-secondary,
   .sidebar-left {

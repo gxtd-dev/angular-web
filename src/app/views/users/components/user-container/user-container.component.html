@@ -18,15 +18,17 @@
         </div>
         <div class="col-md-12">
             <div class="card  o-hidden">
-                <ngx-datatable style="height: 650px; box-shadow: none" 
-                    class="material fullscreen" 
-                    [columnMode]="'standard'" 
+                <ngx-datatable style="box-shadow: none" 
+                    class="material full-main-table" 
+                    [columnMode]="'force'" 
                     [headerHeight]="50" 
                     [footerHeight]="50" 
-                    [rowHeight]="60" 
-                    [scrollbarV]="true" 
+                    [rowHeight]="50" 
+                    [selected]="selected"
+                    [selectionType]="SelectionType.single"
+                    (select)="onSelect($event)"
                     [rows]="filteredUsers">
-                    <ngx-datatable-column name="user_ho_ten" [width]="300">
+                    <ngx-datatable-column name="user_ho_ten">
                         <ng-template ngx-datatable-header-template>
                             Họ tên
                         </ng-template>
@@ -34,7 +36,7 @@
                             {{row.user_ho_ten}}
                         </ng-template>
                     </ngx-datatable-column>
-                    <ngx-datatable-column name="username" [width]="200">
+                    <ngx-datatable-column name="username">
                         <ng-template ngx-datatable-header-template>
                             Username
                         </ng-template>
@@ -42,7 +44,7 @@
                             {{row.username}}
                         </ng-template>
                     </ngx-datatable-column>
-                    <ngx-datatable-column name="user_ngay_sinh" [width]="100">
+                    <ngx-datatable-column name="user_ngay_sinh">
                         <ng-template ngx-datatable-header-template>
                             Ngày sinh
                         </ng-template>

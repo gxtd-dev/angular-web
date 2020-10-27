@@ -36,7 +36,7 @@ export class UserCreateComponent implements OnInit {
     if (!this.isNew) {
       this.user = user;
     }
-    this._buildForm();
+    this._buildForm(this.user);
   }
 
   private _buildForm(user: any = {}) {
@@ -80,7 +80,7 @@ export class UserCreateComponent implements OnInit {
 
     const call$ = this.isNew ? this._userService.createUser(user) : this._userService.updateUser(user);
     call$.subscribe(res => {
-      this._activeModal.close();
+      this._activeModal.close(true);
     }, ({ error }) => {
       this.loading = false;
     });

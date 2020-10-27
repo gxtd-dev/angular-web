@@ -19,7 +19,7 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<User> {
-    return this._httpClient.put<User>('user', user);
+    return this._httpClient.put<User>(`user/${user.id}`, user);
   }
 
 }

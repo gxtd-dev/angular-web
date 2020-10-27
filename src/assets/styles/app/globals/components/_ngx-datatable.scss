@@ -1,0 +1,99 @@
+.ngx-datatable {
+    box-shadow: none;
+
+    &.scroll-no-horizontal {
+        .datatable-body {
+            overflow-x: hidden !important;
+        }
+    }
+
+    .datatable-body-cell, .datatable-header-cell {
+        flex-grow: 1;
+    }
+
+    .flex-5 {
+        flex-grow: 5;
+    }
+
+    .datatable-header-cell {
+        background-color: $success !important;
+        .datatable-header-cell-template-wrap {
+            color: $white;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+
+    &.single-selection .datatable-body-row.active {
+        background-color: $gray-400 !important;
+        .datatable-row-group {
+            background-color: $gray-400 !important;
+        }
+    }
+
+    .datatable-scroll {
+        width: 100% !important;
+
+        .datatable-body-row, .datatable-row-wrapper {
+            width: 100% !important;
+            .datatable-row-center.datatable-row-group {
+                width: 100% !important;
+            }
+
+            .datatable-body-cell-label {
+              font-size: 13px;
+            }
+        }
+
+        .datatable-row-wrapper {
+          cursor: pointer;
+        }
+    }
+
+    .datatable-header {
+        .datatable-header-inner {
+            width: 100% !important;
+            .datatable-row-center {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .datatable-row-detail {
+        overflow: auto !important;
+        background: white !important;
+    }
+
+    .datatable-summary-row > .datatable-body-row {
+        background: white !important;
+    }
+
+    .datatable-body-cell {
+        &.primary-border-left {
+            border-left: 3px $primary solid;
+        }
+        &.secondary-border-left {
+            border-left: 3px $secondary solid;
+        }
+        &.info-border-left {
+            border-left: 3px $info solid;
+        }
+        &.success-border-left {
+            border-left: 3px $success solid;
+        }
+        &.light-border-left {
+            border-left: 3px $light solid;
+        }
+        &.danger-border-left {
+            border-left: 3px $danger solid;
+        }
+    }
+
+    &.full-main-table {
+        height: calc(100vh - 250px);
+        .datatable-body {
+            height: calc(100vh - 350px) !important;
+            overflow: auto;
+        }
+    }
+}
